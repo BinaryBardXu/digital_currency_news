@@ -15,4 +15,5 @@ class Article(object):
             'date': self.__date,
             'link': self.__link
         }
+        print(str(json))
         return str(json)
