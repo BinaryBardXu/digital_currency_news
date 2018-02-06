@@ -14,7 +14,7 @@ homePageUrl = 'https://www.myzaker.com/channel/4'
 
 class ZakerSpider(Spider):
     def run(self):
-        print(site_name + ' spider is running...')
+        super(ZakerSpider, self).banner(site_name)
         news_list = load_news()
         for news in news_list:
             title = str(news.string)

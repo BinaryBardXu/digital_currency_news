@@ -19,6 +19,9 @@ class Spider(object):
         self.__directory_name = ''
         self.__full_directory_path = ''
 
+    def banner(self, site_name):
+        print(site_name + ' spider is running...')
+
     def run(self):
         pass
 

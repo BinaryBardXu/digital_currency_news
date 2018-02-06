@@ -14,6 +14,8 @@ homePageUrl = 'http://www.caixin.com/?HOLDZH'
 
 class CaixingSpider(Spider):
     def run(self):
+        super(CaixingSpider, self).banner(site_name)
+
         news_list = load_news()
         for news in news_list:
             title = str(news.string)

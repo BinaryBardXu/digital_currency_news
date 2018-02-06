@@ -14,7 +14,7 @@ homePageUrl = 'https://www.wsj.com/'
 
 class WSJSpider(Spider):
     def run(self):
-
+        super(WSJSpider, self).banner(site_name)
         news_list = load_news()
         for news in news_list:
             title = str(news.string)

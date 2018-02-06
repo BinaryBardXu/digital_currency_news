@@ -14,6 +14,7 @@ homePageUrl = 'http://www.ftchinese.com'
 
 class FTChineseSpider(Spider):
     def run(self):
+        super(FTChineseSpider, self).banner(site_name)
 
         news_list = load_news()
         for news in news_list:

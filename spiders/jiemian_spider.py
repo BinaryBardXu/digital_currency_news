@@ -14,7 +14,7 @@ homePageUrl = 'http://www.jiemian.com/'
 
 class JieMianSpider(Spider):
     def run(self):
-        print(site_name + ' spider is running...')
+        super(JieMianSpider, self).banner(site_name)
 
         news_list = load_news()
         for news in news_list:
