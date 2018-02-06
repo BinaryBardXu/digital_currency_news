@@ -18,7 +18,7 @@ class ZakerSpider(Spider):
         news_list = load_news()
         for news in news_list:
             title = str(news.string)
-            href = homePageUrl + news['href']
+            href = 'http:' + news['href']
             if any(keyword in title.lower() for keyword in config.keywords):
                 new_article = Article(title, '', href, site_name)
                 super(ZakerSpider, self).save_to_repository(new_article)
