@@ -8,21 +8,20 @@ from article import Article
 import config
 from spiders.spider import Spider
 
-directory_name = 'wsj'
+site_name = '华尔街'
 homePageUrl = 'https://www.wsj.com/'
 
 
 class WSJSpider(Spider):
     def run(self):
-        super(WSJSpider, self).ensure_news_dir(directory_name)
 
         news_list = load_news()
         for news in news_list:
             title = str(news.string)
             href = news['href']
             if any(keyword in title.lower() for keyword in config.keywords):
-                new_article = Article(title, '', href)
-                super(WSJSpider, self).write_news_to_file(new_article, title)
+                new_article = Article(title, '', href, site_name)
+                super(WSJSpider, self).save_to_repository(new_article)
 
 
 def load_news():

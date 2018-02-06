@@ -5,6 +5,8 @@ from datetime import datetime
 from utils.file_utils import ensure_dir
 from utils.file_utils import is_file_already_exist
 
+from repository.mongo import save
+
 sys.setrecursionlimit(10000)
 
 date = datetime.now().strftime("%Y-%m-%d")
@@ -32,3 +34,7 @@ class Spider(object):
 
         with open(file_name, 'wb+') as f:
             pickle.dump(new_article.serialize(), f)
+
+    @staticmethod
+    def save_to_repository(new_article):
+        save(new_article.serialize())

@@ -8,27 +8,27 @@ from article import Article
 import config
 from spiders.spider import Spider
 
-directory_name = 'zaker'
+site_name = 'ZAKER'
 homePageUrl = 'https://www.myzaker.com/channel/4'
 
 
 class ZakerSpider(Spider):
     def run(self):
-        super(ZakerSpider, self).ensure_news_dir(directory_name)
-
+        print(site_name + ' spider is running...')
         news_list = load_news()
+        print(news_list)
         for news in news_list:
             title = str(news.string)
             href = homePageUrl + news['href']
             if any(keyword in title.lower() for keyword in config.keywords):
-                new_article = Article(title, '', href)
-                super(ZakerSpider, self).write_news_to_file(new_article, title)
+                new_article = Article(title, '', href, site_name)
+                super(ZakerSpider, self).save_to_repository(new_article)
 
 
 def load_news():
     home_page_data = requests.get(homePageUrl)
     home_page_html = BeautifulSoup(home_page_data.text, "html.parser")
-    news_elements = home_page_html.find_all(id="content")
+    news_elements = home_page_html.find_all(class_="main")
     all_news_list = []
     for news_element in news_elements:
         news_list = news_element.find_all('a', href=True)

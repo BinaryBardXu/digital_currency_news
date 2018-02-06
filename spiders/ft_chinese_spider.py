@@ -8,21 +8,20 @@ from article import Article
 import config
 from spiders.spider import Spider
 
-directory_name = 'ft_chinese'
-homePageUrl = 'http://www.ftchinese.com/'
+site_name = 'FT中文网'
+homePageUrl = 'http://www.ftchinese.com'
 
 
 class FTChineseSpider(Spider):
     def run(self):
-        super(FTChineseSpider, self).ensure_news_dir(directory_name)
 
         news_list = load_news()
         for news in news_list:
             title = str(news.string)
             href = homePageUrl + news['href']
             if any(keyword in title.lower() for keyword in config.keywords):
-                new_article = Article(title, '', href)
-                super(FTChineseSpider, self).write_news_to_file(new_article, title)
+                new_article = Article(title, '', href, site_name)
+                super(FTChineseSpider, self).save_to_repository(new_article)
 
 
 def load_news():
