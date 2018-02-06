@@ -16,7 +16,6 @@ class ZakerSpider(Spider):
     def run(self):
         print(site_name + ' spider is running...')
         news_list = load_news()
-        print(news_list)
         for news in news_list:
             title = str(news.string)
             href = homePageUrl + news['href']
