@@ -18,7 +18,7 @@ class News(Resource):
         return news_list
 
 
-api.add_resource(News, '/news')
+api.add_resource(News, '/api/news')
 
 if __name__ == '__main__':
     app.run()
