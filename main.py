@@ -6,6 +6,7 @@ from spiders.zaker_spider import ZakerSpider
 from spiders.jiemian_spider import JieMianSpider
 from spiders.tech163_spider import Tech163Spider
 from spiders.fi163_spider import Fi163Spider
+from spiders.wallstreetcn_spider import WSJCNSpider
 
 
 def run_spiders():
@@ -26,6 +27,9 @@ def run_spiders():
 
     fi163_spider = Fi163Spider()
     fi163_spider.run()
+
+    wallstreetcn_spider = WSJCNSpider()
+    wallstreetcn_spider.run()
 
 
 run_spiders()
