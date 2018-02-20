@@ -18,16 +18,6 @@ class Config:
     MONGO_COLLECTION_NAME = 'digital_currency_news'
     MONGO_AUTH_SOURCE = 'admin'
 
-
-    @staticmethod
-    def get_mongo_url():
-        return 'mongodb://%s:%s@%s:%s/%s?authSource=%s' % (Config.MONGO_USER,
-                                                           Config.MONGO_PASSWORD,
-                                                           Config.MONGO_HOST,
-                                                           Config.MONGO_HOST_PORT,
-                                                           Config.MONGO_COLLECTION_NAME,
-                                                           Config.MONGO_AUTH_SOURCE)
-
     @staticmethod
     def init_app(app):
         pass

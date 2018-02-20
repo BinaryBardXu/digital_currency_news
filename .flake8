@@ -1,4 +1,11 @@
 [flake8]
 ignore=build,dist
 max-line-length = 120
-exclude = build/*
+exclude =
+    .git,
+    __pycache__,
+    docs/source/conf.py,
+    old,
+    build,
+    dist,
+    app/api/api_1_0/__init__.py
