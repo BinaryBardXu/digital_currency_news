@@ -1,13 +1,13 @@
 # -*- coding:utf-8 -*-
 
-from spiders.caixin_spider import CaixingSpider
-from spiders.ft_chinese_spider import FTChineseSpider
-from spiders.zaker_spider import ZakerSpider
-from spiders.jiemian_spider import JieMianSpider
-from spiders.tech163_spider import Tech163Spider
-from spiders.fi163_spider import Fi163Spider
-from spiders.wallstreetcn_spider import WSJCNSpider
-from spiders.infzm_spider import NFZMSpider
+from app.spiders.caixin_spider import CaixingSpider
+from app.spiders.ft_chinese_spider import FTChineseSpider
+from app.spiders.zaker_spider import ZakerSpider
+from app.spiders.jiemian_spider import JieMianSpider
+from app.spiders.tech163_spider import Tech163Spider
+from app.spiders.fi163_spider import Fi163Spider
+from app.spiders.wallstreetcn_spider import WSJCNSpider
+from app.spiders.infzm_spider import NFZMSpider
 
 
 def run_spiders():

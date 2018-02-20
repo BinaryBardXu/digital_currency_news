@@ -1,8 +1,16 @@
 from pymongo import MongoClient
 import pymongo
+from manage import app
 
-uri = "mongodb://tao:000000@127.0.0.1:27017/digital_currency_news?authSource=admin"
-client = MongoClient(uri)
+MONGO_URL = 'mongodb://%s:%s@%s:%s/%s?authSource=%s' % (app.config['MONGO_USER'],
+                                                        app.config['MONGO_PASSWORD'],
+                                                        app.config['MONGO_HOST'],
+                                                        app.config['MONGO_HOST_PORT'],
+                                                        app.config['MONGO_COLLECTION_NAME'],
+                                                        app.config['MONGO_AUTH_SOURCE'])
+print(MONGO_URL)
+
+client = MongoClient(MONGO_URL)
 
 db = client['digital_currency_news']
 collect = db['articles']
