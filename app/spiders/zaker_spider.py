@@ -3,10 +3,10 @@
 from bs4 import BeautifulSoup
 
 import requests
-from article import Article
+from app.article import Article
 
 import config
-from spiders.spider import Spider
+from app.spiders.spider import Spider
 
 site_name = 'ZAKER'
 homePageUrl = 'https://www.myzaker.com/channel/4'

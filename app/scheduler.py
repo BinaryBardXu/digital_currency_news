@@ -1,6 +1,6 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import datetime
-from main import run_spiders
+from app.main import run_spiders
 
 
 def job():

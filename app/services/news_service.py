@@ -1,4 +1,4 @@
-from repository.mongo import get_news
+from app.repository.mongo import get_news
 
 
 def get_latest_news():
