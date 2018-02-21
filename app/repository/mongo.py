@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 import pymongo
-from manage import app
+from application import app
 
 MONGO_URL = 'mongodb://%s:%s@%s:%s/%s?authSource=%s' % (app.config['MONGO_USER'],
                                                         app.config['MONGO_PASSWORD'],
