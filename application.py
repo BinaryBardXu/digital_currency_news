@@ -23,4 +23,4 @@ if __name__ == '__main__':
     pid.write()
     print('Active profile is ' + active_profile)
 
-    app.run()
+    app.run(host='0.0.0.0')
