@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
 from app import create_app
 from config import profiles
 
@@ -17,7 +16,6 @@ active_profile = command_args.active_profile or 'default'
 
 config = profiles[active_profile]
 config.merge_args(command_args)
-
 
 app = create_app(config)
 
