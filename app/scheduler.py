@@ -1,11 +1,11 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import datetime
-from app.main import run_spiders
+from . import spiders_runner
 
 
 def job():
     print('\n' + datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-    run_spiders()
+    spiders_runner.run()
 
 
 # BlockingScheduler

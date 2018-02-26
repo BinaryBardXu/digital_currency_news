@@ -10,7 +10,7 @@ from app.spiders.wallstreetcn_spider import WSJCNSpider
 from app.spiders.infzm_spider import NFZMSpider
 
 
-def run_spiders():
+def run():
     caixing_spider = CaixingSpider()
     caixing_spider.run()
 
@@ -36,4 +36,4 @@ def run_spiders():
     infzm_spider.run()
 
 
-run_spiders()
+run()
