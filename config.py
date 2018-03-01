@@ -1,9 +1,9 @@
-application_name = 'digital_currency_news_spiders'
-
 import os
 import logging
 from time import strftime
 from logging.handlers import RotatingFileHandler
+
+application_name = 'digital_currency_news_spiders'
 
 
 def config_logging(log_path):
