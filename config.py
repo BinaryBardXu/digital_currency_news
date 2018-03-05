@@ -4,11 +4,21 @@ from time import strftime
 from logging.handlers import RotatingFileHandler
 
 application_name = 'digital_currency_news_spiders'
+application_display_name = '数字货币新闻抓取'
+
+default_log_path = 'logs'
+
+swagger_config = {
+    'title': application_display_name,
+    'version': 'All',
+    'uiversion': 3,
+    "description": "仅供测试使用。"
+}
 
 
 def config_logging(log_path):
     if log_path is None:
-        log_path = os.getcwd()
+        log_path = default_log_path
 
     if not log_path.endswith('/'):
         log_path += '/'
@@ -46,7 +56,7 @@ class Config:
 
     @staticmethod
     def init_app(app):
-        pass
+        app.config['SWAGGER'] = swagger_config
 
     @staticmethod
     def merge_args(args):

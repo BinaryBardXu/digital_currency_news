@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from app import create_app
 from config import profiles
-
+from flasgger import Swagger, swag_from
 from app.utils import pid
 import argparse
 import logging
@@ -25,5 +25,5 @@ app = create_app(config)
 if __name__ == '__main__':
     pid.write()
     print('Active profile is ' + active_profile)
-
+    swag = Swagger(app)
     app.run(host='0.0.0.0')

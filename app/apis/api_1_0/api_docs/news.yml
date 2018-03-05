@@ -1,0 +1,23 @@
+读取最新的新闻列表，默认限制为最近的50条。
+---
+basePath: "/api"
+
+tags:
+  - 新闻列表
+definitions:
+  News:
+    type: object
+    properties:
+      title:
+          type: string
+          default: ''
+
+responses:
+  200:
+    description: 最新的数字货币新闻
+    schema:
+      properties:
+        data:
+          items:
+            "$ref": "#/definitions/News"
+          type: array
