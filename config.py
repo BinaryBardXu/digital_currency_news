@@ -3,14 +3,14 @@ import logging
 from time import strftime
 from logging.handlers import RotatingFileHandler
 
-application_name = 'digital_currency_news_spiders'
-application_display_name = '数字货币新闻抓取'
+application_name = 'digital_currency_news'
+application_display_name = '数字货币新闻服务'
 
 default_log_path = 'logs'
 
 swagger_config = {
     'title': application_display_name,
-    'version': 'All',
+    'version': 'All versions',
     'uiversion': 3,
     "description": "仅供测试使用。"
 }
@@ -86,3 +86,9 @@ profiles = {
 
     'default': LocalConfig
 }
+
+default_config = Config()
+
+
+def app_config():
+    return default_config
