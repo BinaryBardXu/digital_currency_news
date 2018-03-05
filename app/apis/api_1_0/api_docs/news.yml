@@ -1,7 +1,5 @@
 读取最新的新闻列表，默认限制为最近的50条。
 ---
-basePath: "/api"
-
 tags:
   - 新闻列表
 definitions:

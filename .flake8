@@ -8,4 +8,4 @@ exclude =
     old,
     build,
     dist,
-    app/apis/api_1_0/__init__.py
+    

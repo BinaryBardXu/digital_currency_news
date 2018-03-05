@@ -3,10 +3,11 @@
 from app import create_app
 import config
 from config import profiles
-from flasgger import Swagger, swag_from
+from flasgger import Swagger
 from app.utils import pid
 import argparse
 import logging
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--active_profile')
@@ -36,4 +37,3 @@ if __name__ == '__main__':
     app = create_app(config.default_config)
     swag = Swagger(app)
     app.run(host='0.0.0.0')
-

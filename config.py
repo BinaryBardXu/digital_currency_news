@@ -1,4 +1,3 @@
-import os
 import logging
 from time import strftime
 from logging.handlers import RotatingFileHandler

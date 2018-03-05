@@ -6,6 +6,7 @@ logger = logging.getLogger(__name__)
 
 articles_collection = 'articles'
 
+
 def get_news(limit):
     news_list = []
     for news in list(mongo_client.collection(articles_collection).find().sort('date', pymongo.DESCENDING).limit(limit)):
